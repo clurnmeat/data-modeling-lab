@@ -1,0 +1,44 @@
+Brainstorming
+
+Features
+
+    users can sign into the app with their email and password
+
+    users can create recipes with ingredients and instructions
+
+    recipes can be marked as public or private
+
+    users can view other people’s recipes
+
+    ingredients from recipes can be added to user’s grocery lists
+
+    users can create their own occasions and assign recipes to occasions
+
+
+
+
+DataTables:
+-User: Email, name, favorite-recipes, - contains user 
+-Auth: user_id, password - one to  - pulls in user_id and matches password with account
+-Ingredients: name, ingredients content - organize ingredients
+-Recipes: ingredients_id, instructions, name, public or private, -one to many - pull in ingredients_id and we are adding instructions and whether private or not
+-Grocery List: Recipes(ingredients_id), user_id, -many to many - pulling in recipes(ingredients_id), user_id
+-Occasions: user_id, recipes_id, date - many to many - pulling in user_id and recipes_id and assigning to occasion table
+-User_Post: 
+, recipes_id, body - many to many - pullikng in user_id and recipes_id and creating a post with a body
+
+******************************************************
+-Comments_table: User_Post_id, user_id, body, likes, dislikes, 
+
+
+One to One:
+User -- Auth
+
+
+One to many:
+ingredients --> recipes --> grocery list 
+
+
+Many to many(2 one to many):
+recipes --> grocery list <-- user_id  (assc. table)
+user_id --> User_Post <-- recipes (middle-table)
